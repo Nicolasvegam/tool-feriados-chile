@@ -50,7 +50,7 @@ export default function Page() {
         <Navbar />
         
         {/* Header */}
-        <header className="py-8 animate-fade-in">
+        <header className="pt-24 pb-8 animate-fade-in">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-6xl font-bold text-center mb-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
               Feriados de Chile

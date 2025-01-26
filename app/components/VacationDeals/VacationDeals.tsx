@@ -18,8 +18,8 @@ export default function VacationDeals({ deals }: VacationDealsProps) {
     <section className="container mx-auto px-4 mb-16">
       <div className="relative bg-gradient-to-b from-white to-blue-50/50 backdrop-blur-sm rounded-xl shadow-sm pt-10 pb-8 px-8">
         {/* Hot Deals Badge */}
-        <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 z-10">
-          <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-red-500 to-pink-500 text-white shadow-md">
+        <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 z-10 w-full max-w-[280px] text-center">
+          <span className="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-red-500 to-pink-500 text-white shadow-md whitespace-nowrap">
             🔥 OPTIMIZA TUS VACACIONES 🔥
           </span>
         </div>
