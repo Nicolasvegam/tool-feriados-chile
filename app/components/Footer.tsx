@@ -7,12 +7,12 @@ export default function Footer() {
           <p className="text-gray-600">
             Hecho con ❤️ por{' '}
             <a
-              href="https://nicovega.dev"
+              href="https://software.nicovega.dev"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-800 font-medium transition-colors"
             >
-              Nico Vega
+              Di Monk
             </a>{' '}
             © 2024
           </p>
