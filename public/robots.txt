@@ -1,0 +1,9 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://feriadoschile.nicovega.dev/sitemap.xml
+
+# Optimize crawling
+Crawl-delay: 10 

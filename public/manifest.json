@@ -1,0 +1,28 @@
+{
+  "name": "Feriados de Chile",
+  "short_name": "Feriados CL",
+  "description": "Calendario de feriados y optimizador de vacaciones para Chile",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "/images/logo-app.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logo-app.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ],
+  "orientation": "portrait",
+  "lang": "es-CL",
+  "dir": "ltr",
+  "categories": ["utilities", "productivity"],
+  "prefer_related_applications": false
+} 
