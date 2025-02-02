@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://feriadoschile.nicovega.dev/sitemap.xml
+Sitemap: https://feriados-chile.nicovega.dev/sitemap.xml
 
 # Optimize crawling
 Crawl-delay: 10 
