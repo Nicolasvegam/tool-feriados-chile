@@ -16,7 +16,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://feriados-chile.nicovega.dev'),
+    metadataBase: new URL('https://nicovega.dev/feriados-chile-2025'),
     title: 'Feriados de Chile | Di Monk',
     description: 'Descubre los feriados de Chile y optimiza tus vacaciones. Calendario interactivo con todos los días festivos y planificador de días libres.',
     keywords: 'feriados chile, calendario chile, vacaciones chile, días festivos, optimizador vacaciones',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         locale: 'es_CL',
-        url: 'https://feriados-chile.nicovega.dev/',
+        url: 'https://nicovega.dev/feriados-chile-2025/',
         title: 'Feriados de Chile | Di Monk',
         description: 'Descubre los feriados de Chile y optimiza tus vacaciones. Calendario interactivo con todos los días festivos.',
         siteName: 'Feriados Chile',
