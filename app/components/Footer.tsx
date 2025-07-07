@@ -7,7 +7,7 @@ export default function Footer() {
           <p className="text-gray-600">
             Hecho con ❤️ por{' '}
             <a
-              href="https://software.nicovega.dev"
+              href="https://dimonk.cl"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-800 font-medium transition-colors"

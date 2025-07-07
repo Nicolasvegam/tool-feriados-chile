@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Merriweather } from 'next/font/google';
 import './globals.css';
+import JsonLd from './components/JsonLd';
 
 const merriweather = Merriweather({
     weight: ['300', '400', '700', '900'],
@@ -16,10 +17,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://nicovega.dev/feriados-chile-2025'),
-    title: 'Feriados de Chile | Di Monk',
-    description: 'Descubre los feriados de Chile y optimiza tus vacaciones. Calendario interactivo con todos los días festivos y planificador de días libres.',
-    keywords: 'feriados chile, calendario chile, vacaciones chile, días festivos, optimizador vacaciones',
+    metadataBase: new URL('https://www.feriadosenchile.com'),
+    title: 'Feriados en Chile 2025 - Calendario de Días Festivos',
+    description: 'Calendario completo de feriados en Chile 2025. Consulta todos los días festivos, feriados irrenunciables y planifica tus vacaciones con nuestro optimizador inteligente.',
+    keywords: 'feriados en chile, feriados chile 2025, calendario feriados chile, días festivos chile, feriados irrenunciables, vacaciones chile, planificador vacaciones, feriados nacionales chile',
     authors: [{ name: 'Di Monk' }],
     creator: 'Di Monk',
     publisher: 'Di Monk',
@@ -53,10 +54,10 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         locale: 'es_CL',
-        url: 'https://nicovega.dev/feriados-chile-2025/',
-        title: 'Feriados de Chile | Di Monk',
-        description: 'Descubre los feriados de Chile y optimiza tus vacaciones. Calendario interactivo con todos los días festivos.',
-        siteName: 'Feriados Chile',
+        url: 'https://www.feriadosenchile.com/',
+        title: 'Feriados en Chile 2025 - Calendario de Días Festivos',
+        description: 'Calendario completo de feriados en Chile 2025. Consulta todos los días festivos, feriados irrenunciables y planifica tus vacaciones con nuestro optimizador inteligente.',
+        siteName: 'Feriados en Chile',
         images: [{
             url: '/images/logo-app.webp',
             width: 800,
@@ -66,8 +67,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Feriados de Chile | Di Monk',
-        description: 'Descubre los feriados de Chile y optimiza tus vacaciones. Calendario interactivo con todos los días festivos.',
+        title: 'Feriados en Chile 2025 - Calendario de Días Festivos',
+        description: 'Calendario completo de feriados en Chile 2025. Consulta todos los días festivos y planifica tus vacaciones.',
         images: ['/images/logo-app.webp'],
         creator: '@dimonk',
     },
@@ -82,11 +83,17 @@ export const metadata: Metadata = {
             'max-snippet': -1,
         },
     },
+    alternates: {
+        canonical: 'https://www.feriadosenchile.com',
+    },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="es">
+            <head>
+                <JsonLd />
+            </head>
             <body className={merriweather.className}>{children}</body>
         </html>
     );
