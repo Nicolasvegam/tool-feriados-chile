@@ -128,16 +128,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                                         <span>⏰</span> Cuánto falta
                                     </button>
                                     <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                                        <a href="/contador-18-septiembre" className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm">
+                                        <a href="/cuanto-falta-18-septiembre" className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm">
                                             🇨🇱 18 de Septiembre
                                         </a>
-                                        <a href="/contador-halloween" className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm">
+                                        <a href="/cuanto-falta-halloween" className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm">
                                             🎃 Halloween
                                         </a>
-                                        <a href="/contador-navidad" className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm">
+                                        <a href="/cuanto-falta-navidad" className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm">
                                             🎄 Navidad
                                         </a>
-                                        <a href="/contador-ano-nuevo" className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm rounded-b-lg">
+                                        <a href="/cuanto-falta-ano-nuevo" className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm rounded-b-lg">
                                             🎆 Año Nuevo
                                         </a>
                                     </div>
@@ -195,22 +195,22 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                                 <h4 className="text-lg font-semibold mb-4">Cuánto falta</h4>
                                 <ul className="space-y-2">
                                     <li>
-                                        <a href="/contador-18-septiembre" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2">
+                                        <a href="/cuanto-falta-18-septiembre" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2">
                                             <span>🇨🇱</span> 18 de Septiembre
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/contador-halloween" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2">
+                                        <a href="/cuanto-falta-halloween" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2">
                                             <span>🎃</span> Halloween
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/contador-navidad" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2">
+                                        <a href="/cuanto-falta-navidad" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2">
                                             <span>🎄</span> Navidad
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/contador-ano-nuevo" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2">
+                                        <a href="/cuanto-falta-ano-nuevo" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2">
                                             <span>🎆</span> Año Nuevo
                                         </a>
                                     </li>
