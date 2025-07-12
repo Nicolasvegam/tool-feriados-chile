@@ -1,0 +1,37 @@
+# Feriados en Chile - LLMs.txt
+# Información sobre feriados, días festivos y fechas importantes en Chile
+
+## Sitio Web
+https://www.feriadosenchile.com
+
+## Descripción
+Portal completo de feriados legales e irrenunciables de Chile. Incluye calendario interactivo, calculadora de vacaciones, y contadores para fechas especiales.
+
+## Contenido Principal
+- Feriados legales de Chile por año (2024-2027)
+- Feriados irrenunciables y sus regulaciones laborales
+- Calculadora de optimización de vacaciones
+- Contadores para fechas especiales (18 de Septiembre, Navidad, Año Nuevo, Halloween)
+- Información legal y laboral actualizada
+
+## Páginas Principales
+/: Página principal con calendario de feriados
+/[año]: Feriados por año específico (2024, 2025, 2026, 2027)
+/[año]/[mes]: Feriados por mes específico
+/feriados-irrenunciables: Información sobre feriados irrenunciables
+/calculadora-vacaciones: Herramienta para optimizar períodos de vacaciones
+/cuanto-falta-18-septiembre: Contador para Fiestas Patrias
+/cuanto-falta-navidad: Contador para Navidad
+/cuanto-falta-ano-nuevo: Contador para Año Nuevo
+/cuanto-falta-halloween: Contador para Halloween
+
+## Datos Estructurados
+- JSON-LD para eventos y fechas
+- Metadatos OpenGraph y Twitter Cards
+- Información semántica sobre feriados chilenos
+
+## Actualización
+Contenido actualizado diariamente con nueva información legal y feriados oficiales.
+
+## Contacto
+Sitio web: https://www.feriadosenchile.com
