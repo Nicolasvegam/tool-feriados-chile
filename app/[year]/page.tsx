@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation';
 import HolidaysList from '../components/HolidaysList';
 import VacationOptimizer from '../components/VacationOptimizer';
 import YearSelector from '../components/YearSelector';
-import CalendarLazy from '../components/CalendarLazy';
 import LawsSection from '../components/LawsSection/LawsSection';
 import { getHolidaysByYear, getVacationOptimizationByYear } from '../utils/dataUtils';
 
@@ -123,11 +122,19 @@ export default async function YearPage({ params }: { params: { year: string } })
             </section>
           )}
 
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
-              Calendario Visual {year}
+          <section className="mb-12 text-center">
+            <h2 className="text-3xl font-bold text-gray-800 mb-6">
+              Ver Calendario Completo
             </h2>
-            <CalendarLazy holidays={holidays} currentYear={parseInt(year)} />
+            <p className="text-gray-600 mb-6">
+              Visualiza todos los feriados de {year} en un calendario interactivo
+            </p>
+            <a 
+              href="/calendario"
+              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Ir al Calendario
+            </a>
           </section>
 
           <LawsSection />

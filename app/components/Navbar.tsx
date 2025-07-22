@@ -80,12 +80,12 @@ export default function Navbar() {
               >
                 Optimizador
               </button>
-              <button 
-                onClick={() => scrollToSection('calendar')}
+              <a 
+                href="/calendario"
                 className="text-gray-700 hover:text-blue-600 transition-colors"
               >
                 Calendario
-              </button>
+              </a>
               <button 
                 onClick={() => scrollToSection('laws')}
                 className="text-gray-700 hover:text-blue-600 transition-colors"
@@ -116,12 +116,12 @@ export default function Navbar() {
                 >
                   Optimizador
                 </button>
-                <button
-                  onClick={() => scrollToSection('calendar')}
+                <a
+                  href="/calendario"
                   className="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 transition-colors"
                 >
                   Calendario
-                </button>
+                </a>
                 <button
                   onClick={() => scrollToSection('laws')}
                   className="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 transition-colors"

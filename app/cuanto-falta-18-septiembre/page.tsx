@@ -88,7 +88,7 @@ export default function Contador18Septiembre() {
         <div className="mt-12 bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-6 text-red-600">¿Qué son las Fiestas Patrias?</h2>
           <p className="text-gray-700 mb-4 text-lg">
-            El 18 de Septiembre, conocido popularmente como las Fiestas Patrias o "el Dieciocho", conmemora 
+            El 18 de Septiembre, conocido popularmente como las Fiestas Patrias o &ldquo;el Dieciocho&rdquo;, conmemora 
             la Primera Junta Nacional de Gobierno de Chile en 1810, marcando el inicio del proceso de 
             independencia. Es una de las celebraciones más importantes del país, donde los chilenos 
             celebran con música, bailes tradicionales y comida típica.

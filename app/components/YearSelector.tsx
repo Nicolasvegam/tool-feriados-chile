@@ -6,18 +6,23 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 interface YearSelectorProps {
   currentYear: string;
   validYears: string[];
+  basePath?: string;
 }
 
-export default function YearSelector({ currentYear, validYears }: YearSelectorProps) {
+export default function YearSelector({ currentYear, validYears, basePath = '' }: YearSelectorProps) {
   const currentIndex = validYears.indexOf(currentYear);
   const prevYear = currentIndex > 0 ? validYears[currentIndex - 1] : null;
   const nextYear = currentIndex < validYears.length - 1 ? validYears[currentIndex + 1] : null;
+  
+  const buildPath = (year: string) => {
+    return basePath ? `${basePath}?year=${year}` : `/${year}`;
+  };
 
   return (
     <div className="flex justify-center items-center gap-4 sm:gap-8 my-8">
       {prevYear ? (
         <Link
-          href={`/${prevYear}`}
+          href={buildPath(prevYear)}
           className="group relative p-3 text-blue-600 bg-white border-2 border-blue-200 rounded-full hover:border-blue-400 hover:bg-blue-50 transition-all duration-200 shadow-sm hover:shadow-md"
           aria-label={`Ir al año ${prevYear}`}
         >
@@ -38,7 +43,7 @@ export default function YearSelector({ currentYear, validYears }: YearSelectorPr
 
       {nextYear ? (
         <Link
-          href={`/${nextYear}`}
+          href={buildPath(nextYear)}
           className="group relative p-3 text-blue-600 bg-white border-2 border-blue-200 rounded-full hover:border-blue-400 hover:bg-blue-50 transition-all duration-200 shadow-sm hover:shadow-md"
           aria-label={`Ir al año ${nextYear}`}
         >

@@ -5,6 +5,7 @@ import './globals.css';
 import { WebSiteJsonLd, FAQJsonLd } from './components/JsonLd';
 import SkipNavigation from './components/SkipNavigation';
 import ServiceWorkerRegistration from './components/ServiceWorkerRegistration';
+import { Analytics } from '@vercel/analytics/react';
 
 const merriweather = Merriweather({
     weight: ['300', '400', '700', '900'],
@@ -15,8 +16,8 @@ const merriweather = Merriweather({
 export const viewport: Viewport = {
     width: 'device-width',
     initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
+    maximumScale: 5,
+    userScalable: true,
 };
 
 export const metadata: Metadata = {
@@ -258,6 +259,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                         </div>
                     </div>
                 </footer>
+                <Analytics />
             </body>
         </html>
     );
