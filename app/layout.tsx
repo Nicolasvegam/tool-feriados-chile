@@ -22,8 +22,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
     metadataBase: new URL('https://www.feriadosenchile.com'),
     title: 'Feriados en Chile 2025 - Calendario de Días Festivos',
-    description: 'Calendario completo de feriados legales en Chile 2025. Consulta todos los días festivos oficiales, feriados irrenunciables según la ley laboral chilena, y planifica tus vacaciones con nuestro optimizador inteligente. Información actualizada sobre fechas importantes como 18 de Septiembre, Navidad y Año Nuevo.',
-    keywords: 'feriados en chile, feriados chile 2025, calendario feriados chile, días festivos chile, feriados irrenunciables, vacaciones chile, planificador vacaciones, feriados nacionales chile, ley laboral chile, código del trabajo, fiestas patrias, navidad chile, año nuevo',
+    description: 'Calendario completo de feriados legales en Chile 2025. Consulta todos los días festivos oficiales, feriados irrenunciables según la ley laboral chilena, y planifica tus vacaciones con nuestro optimizador inteligente. Información actualizada sobre fechas importantes como 18 de Septiembre (Fiestas Patrias), Navidad y Año Nuevo.',
+    keywords: 'feriados en chile, feriados chile 2025, calendario feriados chile, días festivos chile, feriados irrenunciables, vacaciones chile, planificador vacaciones, feriados nacionales chile, ley laboral chile, código del trabajo, fiestas patrias, 18 de septiembre, navidad chile, año nuevo',
     authors: [{ name: 'Di Monk' }],
     creator: 'Di Monk',
     publisher: 'Di Monk',

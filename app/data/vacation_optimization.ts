@@ -19,7 +19,7 @@ export const vacation_optimization: Record<string, VacationPeriod[]> = {
   ],
   "2025": [
     {
-      period: "Semana del 18 de septiembre",
+      period: "Semana del 18 de septiembre - Fiestas Patrias",
       days_to_request: ["2025-09-15", "2025-09-16", "2025-09-17"],
       total_days_off: ["2025-09-15", "2025-09-16", "2025-09-17", "2025-09-18", "2025-09-19", "2025-09-20", "2025-09-21"],
       efficiency: 7/3 // 7 días libres / 3 días pedidos
@@ -39,7 +39,7 @@ export const vacation_optimization: Record<string, VacationPeriod[]> = {
   ],
   "2026": [
     {
-      period: "Semana del 18 de septiembre",
+      period: "Semana del 18 de septiembre - Fiestas Patrias",
       days_to_request: ["2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17"],
       total_days_off: [
         "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17",
@@ -74,7 +74,7 @@ export const vacation_optimization: Record<string, VacationPeriod[]> = {
       efficiency: 4/1 // 4 días libres / 1 día pedido
     },
     {
-      period: "Semana del 18 de septiembre",
+      period: "Semana del 18 de septiembre - Fiestas Patrias",
       days_to_request: ["2027-09-20"],
       total_days_off: ["2027-09-18", "2027-09-19", "2027-09-20"],
       efficiency: 3/1 // 3 días libres / 1 día pedido

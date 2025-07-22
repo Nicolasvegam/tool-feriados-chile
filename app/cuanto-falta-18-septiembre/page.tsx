@@ -2,8 +2,9 @@ import CountdownTimer from '@/app/components/CountdownTimer';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Cuánto falta para el 18 de Septiembre - Fiestas Patrias Chile',
-  description: 'Descubre cuánto falta para las Fiestas Patrias de Chile. ¡Prepárate para celebrar con empanadas, chicha y cueca!',
+  title: 'Cuánto falta para el 18 de Septiembre 2024 - Fiestas Patrias Chile',
+  description: 'Descubre cuánto falta para el 18 de Septiembre y las Fiestas Patrias de Chile 2024. Contador en tiempo real para las Fiestas Patrias. ¡Prepárate para celebrar el 18 de Septiembre con empanadas, chicha y cueca!',
+  keywords: '18 de septiembre, fiestas patrias, chile, contador, cuánto falta, dieciocho',
 };
 
 export default function Contador18Septiembre() {
@@ -32,13 +33,19 @@ export default function Contador18Septiembre() {
           <h1 className="text-4xl sm:text-6xl font-black text-white drop-shadow-lg mb-4">
             ¡Viva Chile! 🇨🇱
           </h1>
-          <p className="text-xl sm:text-2xl text-white drop-shadow-md">
-            Fiestas Patrias 2024
+          <p className="text-xl sm:text-2xl text-white drop-shadow-md mb-2">
+            Fiestas Patrias 2024 - 18 de Septiembre
+          </p>
+          <p className="text-lg text-white/90 drop-shadow">
+            Celebremos juntos las Fiestas Patrias de Chile
           </p>
         </div>
 
         <div className="bg-white/20 backdrop-blur-md rounded-3xl p-8 shadow-2xl max-w-4xl mx-auto mb-12">
-          <CountdownTimer targetDate={targetDate} eventName="el 18 de Septiembre" />
+          <h2 className="text-2xl font-bold text-white text-center mb-4">
+            Cuenta Regresiva para el 18 de Septiembre
+          </h2>
+          <CountdownTimer targetDate={targetDate} eventName="el 18 de Septiembre - Fiestas Patrias" />
         </div>
 
         {/* Sección de tradiciones */}
@@ -77,9 +84,24 @@ export default function Contador18Septiembre() {
           </div>
         </div>
 
+        {/* Información sobre el 18 de Septiembre */}
+        <div className="mt-12 bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-6 text-red-600">¿Qué son las Fiestas Patrias?</h2>
+          <p className="text-gray-700 mb-4 text-lg">
+            El 18 de Septiembre, conocido popularmente como las Fiestas Patrias o "el Dieciocho", conmemora 
+            la Primera Junta Nacional de Gobierno de Chile en 1810, marcando el inicio del proceso de 
+            independencia. Es una de las celebraciones más importantes del país, donde los chilenos 
+            celebran con música, bailes tradicionales y comida típica.
+          </p>
+          <p className="text-gray-700 text-lg">
+            Durante las Fiestas Patrias, las fondas y ramadas se llenan de música, se baila la cueca 
+            (baile nacional), y se disfruta de las tradiciones que hacen único al 18 de Septiembre en Chile.
+          </p>
+        </div>
+
         {/* Paya chilena */}
         <div className="mt-12 bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg max-w-3xl mx-auto">
-          <h3 className="text-2xl font-bold text-center mb-6 text-red-600">🎤 Paya Dieciochera</h3>
+          <h3 className="text-2xl font-bold text-center mb-6 text-red-600">🎤 Paya Dieciochera para las Fiestas Patrias</h3>
           <div className="text-center italic text-gray-700 space-y-2">
             <p>&quot;En septiembre florece el campo,</p>
             <p>y Chile se viste de gala,</p>

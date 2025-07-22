@@ -19,7 +19,7 @@ const laws: Law[] = [
     description: "Establecimiento de Feriados Legales",
     details: [
       "Esta es la base legal principal que organiza los feriados en Chile.",
-      "Incluye los feriados más tradicionales, como Año Nuevo (1 de enero), Viernes Santo y Sábado Santo (Semana Santa), Independencia Nacional (18 de septiembre), Día de las Glorias del Ejército (19 de septiembre), y Navidad (25 de diciembre).",
+      "Incluye los feriados más tradicionales, como Año Nuevo (1 de enero), Viernes Santo y Sábado Santo (Semana Santa), Independencia Nacional (18 de septiembre - Fiestas Patrias), Día de las Glorias del Ejército (19 de septiembre - Fiestas Patrias), y Navidad (25 de diciembre).",
       "También regula feriados móviles religiosos, como la Ascensión del Señor y Corpus Christi, aunque algunos han sido reemplazados por otros feriados (como la Virgen del Carmen)."
     ],
     source: "Biblioteca del Congreso Nacional de Chile"
@@ -30,7 +30,7 @@ const laws: Law[] = [
     year: "2004",
     description: "Feriados Obligatorios e Irrenunciables para el Comercio",
     details: [
-      "Define que los días 1 de enero, 1 de mayo, 18 y 19 de septiembre, y 25 de diciembre son irrenunciables para los trabajadores del comercio.",
+      "Define que los días 1 de enero, 1 de mayo, 18 y 19 de septiembre (Fiestas Patrias), y 25 de diciembre son irrenunciables para los trabajadores del comercio.",
       "Excepciones: Clubes, restaurantes y establecimientos de entretenimiento (como cines y espectáculos).",
       "Farmacias de urgencia o turno y expendios de combustibles.",
       "Se creó para garantizar el descanso de los trabajadores en fechas clave, limitando la operación comercial."
@@ -57,7 +57,7 @@ const laws: Law[] = [
     description: "Feriados Adicionales en Septiembre",
     details: [
       "Agrega un feriado adicional en casos específicos:",
-      "Si el 18 y 19 de septiembre caen en martes y miércoles, se declara feriado el lunes 17.",
+      "Si el 18 y 19 de septiembre (Fiestas Patrias) caen en martes y miércoles, se declara feriado el lunes 17.",
       "Si caen en miércoles y jueves, se declara feriado el viernes 20.",
       "Esto busca facilitar el descanso prolongado durante las Fiestas Patrias."
     ],
@@ -84,7 +84,7 @@ const laws: Law[] = [
     details: [
       "Establece feriados adicionales en fechas específicas:",
       "2 de enero, cuando el 1 de enero sea domingo.",
-      "17 de septiembre, cuando el 18 de septiembre sea martes.",
+      "17 de septiembre, cuando el 18 de septiembre (Fiestas Patrias) sea martes.",
       "Busca promover el turismo interno y otorgar un fin de semana largo."
     ],
     source: "Biblioteca del Congreso Nacional de Chile"
