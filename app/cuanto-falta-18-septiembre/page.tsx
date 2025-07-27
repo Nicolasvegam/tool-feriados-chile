@@ -1,4 +1,5 @@
 import CountdownTimer from '@/app/components/CountdownTimer';
+import ChileanSayings from '@/app/components/ChileanSayings';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -116,25 +117,8 @@ export default function Contador18Septiembre() {
         </div>
 
         {/* Dichos chilenos */}
-        <div className="mt-8 text-center">
-          <h3 className="text-2xl font-bold text-white drop-shadow-lg mb-4">Dichos Chilenos</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            <span className="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-medium">
-              &quot;Al tiro&quot; 🏃‍♂️
-            </span>
-            <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium">
-              &quot;Cachai?&quot; 🤔
-            </span>
-            <span className="bg-white text-red-600 px-4 py-2 rounded-full text-sm font-medium">
-              &quot;La raja&quot; 👍
-            </span>
-            <span className="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-medium">
-              &quot;Bacán&quot; 😎
-            </span>
-            <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium">
-              &quot;Po&apos;&quot; 💬
-            </span>
-          </div>
+        <div className="mt-12">
+          <ChileanSayings />
         </div>
       </div>
     </div>

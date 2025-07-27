@@ -4,6 +4,7 @@ import HolidaysList from '../components/HolidaysList';
 import VacationOptimizer from '../components/VacationOptimizer';
 import YearSelector from '../components/YearSelector';
 import LawsSection from '../components/LawsSection/LawsSection';
+import CalendarExport from '../components/CalendarExport';
 import { getHolidaysByYear, getVacationOptimizationByYear } from '../utils/dataUtils';
 
 const VALID_YEARS = ['2024', '2025', '2026', '2027'];
@@ -112,6 +113,8 @@ export default async function YearPage({ params }: { params: { year: string } })
             </h2>
             <HolidaysList holidays={holidays} year={year} />
           </section>
+
+          <CalendarExport holidays={holidays} year={year} />
 
           {vacationOptimization && vacationOptimization.length > 0 && (
             <section className="mb-12">

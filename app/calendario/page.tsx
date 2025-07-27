@@ -1,20 +1,24 @@
 import { Metadata } from 'next';
 import CalendarLazy from '../components/CalendarLazy';
 import YearSelector from '../components/YearSelector';
+import CalendarExport from '../components/CalendarExport';
 import { getHolidaysByYear } from '../utils/dataUtils';
 
 const VALID_YEARS = ['2024', '2025', '2026', '2027'];
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ searchParams }: { searchParams: { year?: string } }): Promise<Metadata> {
   const currentYear = new Date().getFullYear().toString();
+  const selectedYear = searchParams.year && VALID_YEARS.includes(searchParams.year) 
+    ? searchParams.year 
+    : currentYear;
   
   return {
-    title: `Calendario de Feriados en Chile ${currentYear} - Vista Completa`,
-    description: `Calendario visual completo de todos los feriados en Chile ${currentYear}. Visualiza de manera fácil y rápida todos los días festivos del año.`,
-    keywords: `calendario feriados chile ${currentYear}, calendario dias festivos ${currentYear}, vista calendario feriados, calendario visual chile`,
+    title: `Calendario de Feriados en Chile ${selectedYear} - Vista Completa`,
+    description: `Calendario visual completo de todos los feriados en Chile ${selectedYear}. Visualiza de manera fácil y rápida todos los días festivos del año.`,
+    keywords: `calendario feriados chile ${selectedYear}, calendario dias festivos ${selectedYear}, vista calendario feriados, calendario visual chile`,
     openGraph: {
-      title: `Calendario de Feriados Chile ${currentYear}`,
-      description: `Vista completa del calendario de feriados en Chile para ${currentYear}`,
+      title: `Calendario de Feriados Chile ${selectedYear}`,
+      description: `Vista completa del calendario de feriados en Chile para ${selectedYear}`,
       url: `https://www.feriadosenchile.com/calendario`,
       siteName: 'Feriados en Chile',
       locale: 'es_CL',
@@ -95,6 +99,8 @@ export default async function CalendarioPage({
               basePath="/calendario"
             />
           </div>
+
+          <CalendarExport holidays={holidays} year={selectedYear} />
 
           <section className="mb-12">
             <CalendarLazy holidays={holidays} currentYear={parseInt(selectedYear)} />
