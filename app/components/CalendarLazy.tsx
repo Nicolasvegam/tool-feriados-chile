@@ -13,7 +13,7 @@ const Calendar = dynamic(() => import('./Calendar/Calendar'), {
       </div>
     </div>
   ),
-  ssr: false
+  ssr: true
 });
 
 export default Calendar;

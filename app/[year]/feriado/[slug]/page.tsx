@@ -4,6 +4,9 @@ import Link from 'next/link';
 import { Calendar, ChevronLeft, MapPin, Gavel, AlertCircle } from 'lucide-react';
 import { formatDateToSpanish } from '@/app/utils/dateUtils';
 import { getHolidaysByYear, getHolidayBySlug } from '@/app/utils/dataUtils';
+import { parseLawReferences } from '@/app/utils/lawUtils';
+import NavigationLinks from '@/app/components/NavigationLinks';
+import LawReferences from '@/app/components/LawReferences';
 
 const VALID_YEARS = ['2024', '2025', '2026', '2027'];
 
@@ -217,7 +220,9 @@ export default async function HolidayPage({ params }: { params: { year: string; 
                     <Gavel className="w-5 h-5 text-gray-600 mt-0.5" />
                     <div>
                       <h3 className="font-semibold text-gray-800">Marco Legal</h3>
-                      <p className="text-gray-600 text-sm mt-1">{holiday.law}</p>
+                      <p className="text-gray-600 text-sm mt-1">
+                        <LawReferences laws={parseLawReferences(holiday.law)} />
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -248,6 +253,12 @@ export default async function HolidayPage({ params }: { params: { year: string; 
                     </span>
                   </li>
                 </ul>
+              </div>
+
+              {/* Navigation to other holidays */}
+              <div className="border-t pt-6">
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">Otros feriados cercanos</h3>
+                <NavigationLinks currentHoliday={holiday} year={params.year} />
               </div>
 
               {/* Call to action */}

@@ -1,6 +1,10 @@
+'use client';
+
 import { Holiday } from '@/app/data/holidays';
 import { formatDateToSpanish } from '@/app/utils/dateUtils';
+import { parseLawReferences } from '@/app/utils/lawUtils';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 interface HolidayCardProps {
   holiday: Holiday;
@@ -9,10 +13,16 @@ interface HolidayCardProps {
 
 export default function HolidayCard({ holiday, year }: HolidayCardProps) {
   const holidayYear = year || new Date(holiday.date).getFullYear().toString();
+  const router = useRouter();
+  
+  const handleCardClick = () => {
+    router.push(`/${holidayYear}/feriado/${holiday.slug}`);
+  };
+  
   return (
-    <Link 
-      href={`/${holidayYear}/feriado/${holiday.slug}`}
-      className="group block p-4 border-2 border-gray-200 rounded-xl bg-white shadow-sm hover:shadow-lg hover:border-blue-300 transition-all duration-200 hover:-translate-y-0.5"
+    <div 
+      onClick={handleCardClick}
+      className="group block p-4 border-2 border-gray-200 rounded-xl bg-white shadow-sm hover:shadow-lg hover:border-blue-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer"
     >
       <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
         <div className="flex-1">
@@ -47,10 +57,28 @@ export default function HolidayCard({ holiday, year }: HolidayCardProps) {
         </div>
       )}
       {holiday.law && (
-        <div className="text-xs text-gray-400 mt-2 italic">
-          {holiday.law}
+        <div className="text-xs text-gray-500 mt-2">
+          <span className="text-gray-400">Marco legal: </span>
+          {parseLawReferences(holiday.law).map((law, index, array) => (
+            <span key={index}>
+              {law.url ? (
+                <span 
+                  className="text-blue-600 hover:text-blue-800 underline cursor-pointer"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open(law.url, '_blank', 'noopener,noreferrer');
+                  }}
+                >
+                  {law.text}
+                </span>
+              ) : (
+                <span className="text-gray-500">{law.text}</span>
+              )}
+              {index < array.length - 1 && ', '}
+            </span>
+          ))}
         </div>
       )}
-    </Link>
+    </div>
   );
 } 

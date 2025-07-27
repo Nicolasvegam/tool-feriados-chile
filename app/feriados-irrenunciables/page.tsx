@@ -35,9 +35,28 @@ export default function FeriadosIrrenunciablesPage() {
     { name: 'Feriados Irrenunciables', url: 'https://www.feriadosenchile.com/feriados-irrenunciables' }
   ];
 
+  const faqs = [
+    {
+      question: '¿Todos los trabajadores tienen derecho a feriados irrenunciables?',
+      answer: 'No, la ley de feriados irrenunciables aplica principalmente a trabajadores del comercio y servicios que atienden directamente al público. Otros sectores pueden tener regulaciones diferentes.'
+    },
+    {
+      question: '¿Qué pasa si mi empleador me obliga a trabajar?',
+      answer: 'Si tu empleador te obliga a trabajar en un feriado irrenunciable sin justificación legal, puedes denunciar esta situación ante la Dirección del Trabajo. El empleador puede enfrentar multas y sanciones.'
+    },
+    {
+      question: '¿Los feriados irrenunciables se pueden cambiar de fecha?',
+      answer: 'No, los feriados irrenunciables no pueden ser trasladados a otro día. Deben ser respetados en la fecha que corresponde según el calendario oficial.'
+    },
+    {
+      question: '¿Qué comercios pueden abrir en feriados irrenunciables?',
+      answer: 'Algunos establecimientos esenciales como farmacias de turno, estaciones de servicio, y ciertos locales de comida pueden operar con autorización especial. Sin embargo, deben cumplir con todas las compensaciones legales para sus trabajadores.'
+    }
+  ];
+
   return (
     <>
-      <FAQJsonLd />
+      <FAQJsonLd faqs={faqs} />
       <BreadcrumbJsonLd items={breadcrumbItems} />
       
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">

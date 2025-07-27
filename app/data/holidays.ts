@@ -806,32 +806,37 @@ export const holidays = {
       "name": "Año Nuevo",
       "slug": "ano-nuevo",
       "type": "Civil",
-      "isIrrenunciable": true
+      "isIrrenunciable": true,
+      "law": "Ley 2.977, Ley 19.973"
     },
     {
       "date": "2026-04-03",
       "name": "Viernes Santo",
       "slug": "viernes-santo",
-      "type": "Religioso"
+      "type": "Religioso",
+      "law": "Ley 2.977"
     },
     {
       "date": "2026-04-04",
       "name": "Sábado Santo",
       "slug": "sabado-santo",
-      "type": "Religioso"
+      "type": "Religioso",
+      "law": "Ley 2.977"
     },
     {
       "date": "2026-05-01",
       "name": "Día Nacional del Trabajo",
       "slug": "dia-nacional-del-trabajo",
       "type": "Civil",
-      "isIrrenunciable": true
+      "isIrrenunciable": true,
+      "law": "Código del Trabajo, Ley 19.973"
     },
     {
       "date": "2026-05-21",
       "name": "Día de las Glorias Navales",
       "slug": "dia-de-las-glorias-navales",
-      "type": "Civil"
+      "type": "Civil",
+      "law": "Ley 2.977"
     },
     {
       "date": "2026-06-07",
@@ -839,76 +844,88 @@ export const holidays = {
       "slug": "asalto-y-toma-del-morro-de-arica",
       "type": "Civil",
       "isRegional": true,
-      "region": "Región de Arica y Parinacota"
+      "region": "Región de Arica y Parinacota",
+      "law": "Ley 20.663"
     },
     {
       "date": "2026-06-20",
       "name": "Día Nacional de los Pueblos Indígenas",
       "slug": "dia-nacional-de-los-pueblos-indigenas",
-      "type": "Civil"
+      "type": "Civil",
+      "law": "Ley 21.357"
     },
     {
       "date": "2026-06-29",
       "name": "San Pedro y San Pablo",
       "slug": "san-pedro-y-san-pablo",
-      "type": "Religioso"
+      "type": "Religioso",
+      "law": "Ley 2.977, Ley 18.432, Ley 19.668"
     },
     {
       "date": "2026-07-16",
       "name": "Virgen del Carmen",
       "slug": "virgen-del-carmen",
-      "type": "Religioso"
+      "type": "Religioso",
+      "law": "Ley 20.148"
     },
     {
       "date": "2026-08-15",
       "name": "Asunción de la Virgen",
       "slug": "asuncion-de-la-virgen",
-      "type": "Religioso"
+      "type": "Religioso",
+      "law": "Ley 2.977"
     },
     {
       "date": "2026-09-18",
       "name": "Independencia Nacional",
       "slug": "independencia-nacional",
       "type": "Civil",
-      "isIrrenunciable": true
+      "isIrrenunciable": true,
+      "law": "Ley 2.977, Ley 19.973"
     },
     {
       "date": "2026-09-19",
       "name": "Día de las Glorias del Ejército",
       "slug": "dia-de-las-glorias-del-ejercito",
       "type": "Civil",
-      "isIrrenunciable": true
+      "isIrrenunciable": true,
+      "law": "Ley 2.977, Ley 20.629"
     },
     {
       "date": "2026-10-12",
       "name": "Encuentro de Dos Mundos",
       "slug": "encuentro-de-dos-mundos",
-      "type": "Civil"
+      "type": "Civil",
+      "law": "Ley 3.810, Ley 19.668"
     },
     {
       "date": "2026-10-31",
       "name": "Día de las Iglesias Evangélicas y Protestantes",
       "slug": "dia-de-las-iglesias-evangelicas-y-protestantes",
-      "type": "Religioso"
+      "type": "Religioso",
+      "law": "Ley 20.299"
     },
     {
       "date": "2026-11-01",
       "name": "Día de Todos los Santos",
       "slug": "dia-de-todos-los-santos",
-      "type": "Religioso"
+      "type": "Religioso",
+      "law": "Ley 2.977"
     },
     {
       "date": "2026-12-08",
       "name": "Inmaculada Concepción",
       "slug": "inmaculada-concepcion",
-      "type": "Religioso"
+      "type": "Religioso",
+      "law": "Ley 2.977"
     },
     {
       "date": "2026-12-25",
       "name": "Navidad",
       "slug": "navidad",
       "type": "Religioso",
-      "isIrrenunciable": true
+      "isIrrenunciable": true,
+      "law": "Ley 2.977, Ley 19.973"
     }
   ],
   "2027": [
@@ -917,32 +934,37 @@ export const holidays = {
       "name": "Año Nuevo",
       "slug": "ano-nuevo",
       "type": "Civil",
-      "isIrrenunciable": true
+      "isIrrenunciable": true,
+      "law": "Ley 2.977, Ley 19.973"
     },
     {
       "date": "2027-03-26",
       "name": "Viernes Santo",
       "slug": "viernes-santo",
-      "type": "Religioso"
+      "type": "Religioso",
+      "law": "Ley 2.977"
     },
     {
       "date": "2027-03-27",
       "name": "Sábado Santo",
       "slug": "sabado-santo",
-      "type": "Religioso"
+      "type": "Religioso",
+      "law": "Ley 2.977"
     },
     {
       "date": "2027-05-01",
       "name": "Día Nacional del Trabajo",
       "slug": "dia-nacional-del-trabajo",
       "type": "Civil",
-      "isIrrenunciable": true
+      "isIrrenunciable": true,
+      "law": "Código del Trabajo, Ley 19.973"
     },
     {
       "date": "2027-05-21",
       "name": "Día de las Glorias Navales",
       "slug": "dia-de-las-glorias-navales",
-      "type": "Civil"
+      "type": "Civil",
+      "law": "Ley 2.977"
     },
     {
       "date": "2027-06-07",
@@ -950,76 +972,88 @@ export const holidays = {
       "slug": "asalto-y-toma-del-morro-de-arica",
       "type": "Civil",
       "isRegional": true,
-      "region": "Región de Arica y Parinacota"
+      "region": "Región de Arica y Parinacota",
+      "law": "Ley 20.663"
     },
     {
       "date": "2027-06-20",
       "name": "Día Nacional de los Pueblos Indígenas",
       "slug": "dia-nacional-de-los-pueblos-indigenas",
-      "type": "Civil"
+      "type": "Civil",
+      "law": "Ley 21.357"
     },
     {
       "date": "2027-06-28",
       "name": "San Pedro y San Pablo",
       "slug": "san-pedro-y-san-pablo",
-      "type": "Religioso"
+      "type": "Religioso",
+      "law": "Ley 2.977, Ley 18.432, Ley 19.668"
     },
     {
       "date": "2027-07-16",
       "name": "Virgen del Carmen",
       "slug": "virgen-del-carmen",
-      "type": "Religioso"
+      "type": "Religioso",
+      "law": "Ley 20.148"
     },
     {
       "date": "2027-08-15",
       "name": "Asunción de la Virgen",
       "slug": "asuncion-de-la-virgen",
-      "type": "Religioso"
+      "type": "Religioso",
+      "law": "Ley 2.977"
     },
     {
       "date": "2027-09-18",
       "name": "Independencia Nacional",
       "slug": "independencia-nacional",
       "type": "Civil",
-      "isIrrenunciable": true
+      "isIrrenunciable": true,
+      "law": "Ley 2.977, Ley 19.973"
     },
     {
       "date": "2027-09-19",
       "name": "Día de las Glorias del Ejército",
       "slug": "dia-de-las-glorias-del-ejercito",
       "type": "Civil",
-      "isIrrenunciable": true
+      "isIrrenunciable": true,
+      "law": "Ley 2.977, Ley 20.629"
     },
     {
       "date": "2027-10-11",
       "name": "Encuentro de Dos Mundos",
       "slug": "encuentro-de-dos-mundos",
-      "type": "Civil"
+      "type": "Civil",
+      "law": "Ley 3.810, Ley 19.668"
     },
     {
       "date": "2027-10-31",
       "name": "Día de las Iglesias Evangélicas y Protestantes",
       "slug": "dia-de-las-iglesias-evangelicas-y-protestantes",
-      "type": "Religioso"
+      "type": "Religioso",
+      "law": "Ley 20.299"
     },
     {
       "date": "2027-11-01",
       "name": "Día de Todos los Santos",
       "slug": "dia-de-todos-los-santos",
-      "type": "Religioso"
+      "type": "Religioso",
+      "law": "Ley 2.977"
     },
     {
       "date": "2027-12-08",
       "name": "Inmaculada Concepción",
       "slug": "inmaculada-concepcion",
-      "type": "Religioso"
+      "type": "Religioso",
+      "law": "Ley 2.977"
     },
     {
       "date": "2027-12-25",
       "name": "Navidad",
       "slug": "navidad",
       "type": "Religioso",
-      "isIrrenunciable": true
+      "isIrrenunciable": true,
+      "law": "Ley 2.977, Ley 19.973"
     }
   ]
 };
