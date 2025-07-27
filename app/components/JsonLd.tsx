@@ -32,7 +32,7 @@ export function WebSiteJsonLd() {
           name: 'Feriados en Chile',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://www.feriadosenchile.com/logo.png'
+            url: 'https://www.feriadosenchile.com/images/logo-feriados.webp'
           }
         },
         potentialAction: {
@@ -59,8 +59,8 @@ export function WebSiteJsonLd() {
   );
 }
 
-export function FAQJsonLd() {
-  const faqs = [
+export function FAQJsonLd({ faqs }: { faqs?: Array<{ question: string; answer: string }> }) {
+  const defaultFaqs = [
     {
       question: '¿Cuántos feriados irrenunciables hay en Chile?',
       answer: 'En Chile hay 8 feriados irrenunciables al año: Año Nuevo, Viernes Santo, Sábado Santo, 1 de Mayo, 21 de Mayo, 18 de Septiembre, 19 de Septiembre, y Navidad.'
@@ -83,11 +83,13 @@ export function FAQJsonLd() {
     }
   ];
 
+  const faqData = faqs || defaultFaqs;
+
   return (
     <JsonLd
       type="FAQPage"
       data={{
-        mainEntity: faqs.map(faq => ({
+        mainEntity: faqData.map(faq => ({
           '@type': 'Question',
           name: faq.question,
           acceptedAnswer: {
@@ -111,6 +113,38 @@ export function BreadcrumbJsonLd({ items }: { items: Array<{ name: string; url: 
           name: item.name,
           item: item.url
         }))
+      }}
+    />
+  );
+}
+
+export function OrganizationJsonLd() {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ 
+        __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'Feriados en Chile',
+          url: 'https://www.feriadosenchile.com',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://www.feriadosenchile.com/images/logo-feriados.webp',
+            width: 800,
+            height: 600
+          },
+          description: 'Calendario oficial de feriados en Chile. Consulta días festivos, feriados irrenunciables y planifica tus vacaciones.',
+          sameAs: [
+            'https://twitter.com/dimonk',
+            'https://www.dimonk.com'
+          ],
+          founder: {
+            '@type': 'Person',
+            name: 'Di Monk',
+            url: 'https://www.dimonk.com'
+          }
+        })
       }}
     />
   );

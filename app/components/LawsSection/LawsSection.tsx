@@ -172,7 +172,7 @@ export default function LawsSection() {
   };
 
   return (
-    <section className="container mx-auto px-4 py-8 animate-fade-in animation-delay-800">
+    <section className="container mx-auto px-4 py-8">
       <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
         Leyes de Feriados
       </h2>
@@ -211,7 +211,7 @@ export default function LawsSection() {
             </button>
             
             {openLawId === law.id && (
-              <div className="px-6 pb-4 animate-fade-in">
+              <div className="px-6 pb-4">
                 <div className="prose prose-sm max-w-none">
                   <ul className="list-disc pl-5 space-y-2 text-gray-700">
                     {law.details.map((detail, index) => (

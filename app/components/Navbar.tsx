@@ -1,8 +1,23 @@
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -92,6 +107,40 @@ export default function Navbar() {
               >
                 Leyes
               </button>
+              
+              {/* Dropdown Menu */}
+              <div className="relative" ref={dropdownRef}>
+                <button
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  className="flex items-center text-gray-700 hover:text-blue-600 transition-colors"
+                >
+                  Más
+                  <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {isDropdownOpen && (
+                  <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2">
+                    <a href="/feriados-irrenunciables" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                      Feriados Irrenunciables
+                    </a>
+                    <a href="/calculadora-vacaciones" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                      Calculadora de Vacaciones
+                    </a>
+                    <div className="h-px bg-gray-200 my-2"></div>
+                    <a href="/quienes-somos" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                      Quiénes Somos
+                    </a>
+                    <a href="/metodologia" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                      Metodología
+                    </a>
+                    <a href="/contacto" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                      Contacto
+                    </a>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -128,6 +177,37 @@ export default function Navbar() {
                 >
                   Leyes
                 </button>
+                <div className="h-px bg-gray-200 my-2"></div>
+                <a
+                  href="/feriados-irrenunciables"
+                  className="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 transition-colors"
+                >
+                  Feriados Irrenunciables
+                </a>
+                <a
+                  href="/calculadora-vacaciones"
+                  className="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 transition-colors"
+                >
+                  Calculadora de Vacaciones
+                </a>
+                <a
+                  href="/quienes-somos"
+                  className="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 transition-colors"
+                >
+                  Quiénes Somos
+                </a>
+                <a
+                  href="/metodologia"
+                  className="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 transition-colors"
+                >
+                  Metodología
+                </a>
+                <a
+                  href="/contacto"
+                  className="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 transition-colors"
+                >
+                  Contacto
+                </a>
               </div>
             </div>
           </div>
