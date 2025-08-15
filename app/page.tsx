@@ -68,7 +68,7 @@ export default async function HomePage() {
             </p>
           </header>
 
-          <YearSelector currentYear={currentYear} />
+          <YearSelector currentYear={currentYear}  validYears={['2024', '2025', '2026', '2027']}/>
           
           <section className="mb-12">
             <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
