@@ -78,13 +78,13 @@ export default async function HomePage() {
                 </h2>
                 <CalendarExport holidays={holidays} year={currentYear} />
               </div>
-              <HolidaysList holidays={holidays} currentYear={currentYear} />
+              <HolidaysList holidays={holidays} year={currentYear} />
             </div>
           </section>
 
           {vacationOptimizations.length > 0 && (
             <section className="mb-12">
-              <VacationOptimizer optimizations={vacationOptimizations} year={currentYear} />
+              <VacationOptimizer vacationDeals={vacationOptimizations} year={currentYear} />
             </section>
           )}
 
