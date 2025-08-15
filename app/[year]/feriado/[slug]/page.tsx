@@ -98,6 +98,25 @@ export default async function HolidayPage({ params }: { params: { year: string; 
     organizer: {
       '@type': 'GovernmentOrganization',
       name: 'Gobierno de Chile'
+    },
+    performer: {
+      '@type': 'Organization',
+      name: 'Pueblo de Chile',
+      description: 'Ciudadanos celebrando el feriado nacional'
+    },
+    image: [
+      `https://www.feriadosenchile.com/og-image.png`,
+      `https://www.feriadosenchile.com/chile-flag.png`,
+      `https://www.feriadosenchile.com/calendar-icon.png`
+    ],
+    offers: {
+      '@type': 'Offer',
+      description: 'Evento público gratuito',
+      price: '0',
+      priceCurrency: 'CLP',
+      availability: 'https://schema.org/InStock',
+      url: `https://www.feriadosenchile.com/${params.year}/feriado/${params.slug}`,
+      validFrom: holiday.date
     }
   };
 
