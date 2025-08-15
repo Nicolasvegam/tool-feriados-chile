@@ -27,22 +27,28 @@ export async function generateStaticParams() {
 }
 
 export const revalidate = 86400; // Revalidar cada 24 horas
+export const dynamicParams = false; // No permitir parámetros dinámicos fuera de generateStaticParams
 
 export async function generateMetadata({ params }: { params: { year: string; slug: string } }): Promise<Metadata> {
   const holiday = await getHolidayBySlug(params.year, params.slug);
   
   if (!holiday) {
-    return {};
+    return {
+      robots: 'noindex, nofollow',
+    };
   }
+
+  const canonicalUrl = `https://www.feriadosenchile.com/${params.year}/feriado/${params.slug}`;
 
   return {
     title: `${holiday.name} ${params.year} - Feriado en Chile`,
     description: `${holiday.name} se celebra el ${formatDateToSpanish(holiday.date)}. ${holiday.isIrrenunciable ? 'Es un feriado irrenunciable.' : ''} Conoce más sobre este día festivo ${holiday.type.toLowerCase()} en Chile.`,
     keywords: `${holiday.name}, feriado ${params.year}, ${formatDateToSpanish(holiday.date)}, feriados chile, ${holiday.type.toLowerCase()}`,
+    robots: 'index, follow',
     openGraph: {
       title: `${holiday.name} ${params.year}`,
       description: `Información completa sobre ${holiday.name} - ${formatDateToSpanish(holiday.date)}`,
-      url: `https://www.feriadosenchile.com/${params.year}/feriado/${params.slug}`,
+      url: canonicalUrl,
       siteName: 'Feriados en Chile',
       locale: 'es_CL',
       type: 'article',
@@ -53,7 +59,7 @@ export async function generateMetadata({ params }: { params: { year: string; slu
       description: `${formatDateToSpanish(holiday.date)} - Feriado ${holiday.type}`,
     },
     alternates: {
-      canonical: `https://www.feriadosenchile.com/${params.year}/feriado/${params.slug}`,
+      canonical: canonicalUrl,
     },
   };
 }
