@@ -14,6 +14,7 @@ export async function generateStaticParams() {
 }
 
 export const revalidate = 86400; // Revalidar cada 24 horas
+export const dynamicParams = false; // No permitir años fuera de VALID_YEARS
 
 export async function generateMetadata({ params }: { params: { year: string } }): Promise<Metadata> {
   const year = params.year;
