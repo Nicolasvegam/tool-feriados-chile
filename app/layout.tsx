@@ -98,9 +98,6 @@ export const metadata: Metadata = {
         'content-freshness': 'updated-daily',
         'llm-friendly': 'true',
     },
-    alternates: {
-        canonical: 'https://www.feriadosenchile.com',
-    },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
