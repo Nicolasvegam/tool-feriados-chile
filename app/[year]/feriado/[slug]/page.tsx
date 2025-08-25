@@ -1,12 +1,13 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { Calendar, ChevronLeft, MapPin, Gavel, AlertCircle } from 'lucide-react';
+import { Calendar, ChevronLeft, MapPin, Gavel, AlertCircle, Info, Clock, Users, Star } from 'lucide-react';
 import { formatDateToSpanish } from '@/app/utils/dateUtils';
 import { getHolidaysByYear, getHolidayBySlug } from '@/app/utils/dataUtils';
 import { parseLawReferences } from '@/app/utils/lawUtils';
 import NavigationLinks from '@/app/components/NavigationLinks';
 import LawReferences from '@/app/components/LawReferences';
+import { getHolidayDescription } from '@/app/data/holidayDescriptions';
 
 const VALID_YEARS = ['2024', '2025', '2026', '2027'];
 
@@ -38,13 +39,29 @@ export async function generateMetadata({ params }: { params: { year: string; slu
     };
   }
 
+  const holidayDetails = getHolidayDescription(holiday.slug);
   const canonicalUrl = `https://www.feriadosenchile.com/${params.year}/feriado/${params.slug}`;
+  
+  const description = holidayDetails 
+    ? `${holiday.name} ${params.year}: ${holidayDetails.significance} Se celebra el ${formatDateToSpanish(holiday.date)}. ${holiday.isIrrenunciable ? 'Feriado irrenunciable.' : ''}`
+    : `${holiday.name} se celebra el ${formatDateToSpanish(holiday.date)}. ${holiday.isIrrenunciable ? 'Es un feriado irrenunciable.' : ''} Conoce más sobre este día festivo ${holiday.type.toLowerCase()} en Chile.`;
 
   return {
-    title: `${holiday.name} ${params.year} - Feriado en Chile`,
-    description: `${holiday.name} se celebra el ${formatDateToSpanish(holiday.date)}. ${holiday.isIrrenunciable ? 'Es un feriado irrenunciable.' : ''} Conoce más sobre este día festivo ${holiday.type.toLowerCase()} en Chile.`,
-    keywords: `${holiday.name}, feriado ${params.year}, ${formatDateToSpanish(holiday.date)}, feriados chile, ${holiday.type.toLowerCase()}`,
-    robots: 'index, follow',
+    metadataBase: new URL('https://www.feriadosenchile.com'),
+    title: `${holiday.name} ${params.year} - Historia, Tradiciones y Significado | Feriados Chile`,
+    description: description.slice(0, 160),
+    keywords: `${holiday.name}, feriado ${params.year}, ${formatDateToSpanish(holiday.date)}, feriados chile, ${holiday.type.toLowerCase()}, historia ${holiday.name}, tradiciones ${holiday.name}, significado ${holiday.name}`,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
     openGraph: {
       title: `${holiday.name} ${params.year}`,
       description: `Información completa sobre ${holiday.name} - ${formatDateToSpanish(holiday.date)}`,
@@ -52,6 +69,12 @@ export async function generateMetadata({ params }: { params: { year: string; slu
       siteName: 'Feriados en Chile',
       locale: 'es_CL',
       type: 'article',
+      images: [{
+        url: '/images/logo-app.webp',
+        width: 800,
+        height: 600,
+        alt: `${holiday.name} ${params.year}`,
+      }],
     },
     twitter: {
       card: 'summary',
@@ -77,28 +100,60 @@ export default async function HolidayPage({ params }: { params: { year: string; 
 
   const holidayDate = new Date(holiday.date);
   const dayOfWeek = holidayDate.toLocaleDateString('es-CL', { weekday: 'long' });
+  const holidayDetails = getHolidayDescription(holiday.slug);
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Event',
+    '@type': 'Article',
+    '@id': `https://www.feriadosenchile.com/${params.year}/feriado/${params.slug}`,
+    url: `https://www.feriadosenchile.com/${params.year}/feriado/${params.slug}`,
+    headline: `${holiday.name} ${params.year}`,
     name: holiday.name,
-    description: `${holiday.name} - Feriado ${holiday.type} en Chile`,
-    startDate: holiday.date,
-    endDate: holiday.date,
-    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-    eventStatus: 'https://schema.org/EventScheduled',
-    location: {
-      '@type': 'Country',
-      name: 'Chile',
-      address: {
-        '@type': 'PostalAddress',
-        addressCountry: 'CL'
+    description: holidayDetails 
+      ? `${holidayDetails.significance} ${holidayDetails.history}`
+      : `${holiday.name} - Feriado ${holiday.type} en Chile que se celebra el ${formatDateToSpanish(holiday.date)}`,
+    datePublished: '2024-01-01',
+    dateModified: new Date().toISOString(),
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://www.feriadosenchile.com/${params.year}/feriado/${params.slug}`
+    },
+    author: {
+      '@type': 'Organization',
+      name: 'Feriados en Chile',
+      url: 'https://www.feriadosenchile.com'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Feriados en Chile',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.feriadosenchile.com/images/logo-app.webp'
       }
     },
-    organizer: {
-      '@type': 'GovernmentOrganization',
-      name: 'Gobierno de Chile'
-    }
+    image: {
+      '@type': 'ImageObject',
+      url: 'https://www.feriadosenchile.com/images/logo-app.webp',
+      width: 800,
+      height: 600
+    },
+    about: {
+      '@type': 'Event',
+      name: holiday.name,
+      startDate: holiday.date,
+      endDate: holiday.date,
+      eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+      eventStatus: 'https://schema.org/EventScheduled',
+      location: {
+        '@type': 'Country',
+        name: 'Chile',
+        address: {
+          '@type': 'PostalAddress',
+          addressCountry: 'CL'
+        }
+      }
+    },
+    keywords: `${holiday.name}, feriado ${params.year}, ${formatDateToSpanish(holiday.date)}, feriados chile, ${holiday.type.toLowerCase()}`
   };
 
   const breadcrumbJsonLd = {
@@ -234,9 +289,80 @@ export default async function HolidayPage({ params }: { params: { year: string; 
                 </div>
               )}
 
+              {/* Historia detallada del feriado */}
+              {holidayDetails && (
+                <>
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <div className="flex items-start gap-3">
+                      <Clock className="w-5 h-5 text-blue-600 mt-0.5" />
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-gray-800 mb-2">Historia y Origen</h3>
+                        <p className="text-gray-700 leading-relaxed">
+                          {holidayDetails.history}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <div className="flex items-start gap-3">
+                      <Star className="w-5 h-5 text-green-600 mt-0.5" />
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-gray-800 mb-2">Significado Cultural</h3>
+                        <p className="text-gray-700 leading-relaxed">
+                          {holidayDetails.significance}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {holidayDetails.traditions && (
+                    <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                      <div className="flex items-start gap-3">
+                        <Users className="w-5 h-5 text-purple-600 mt-0.5" />
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-gray-800 mb-2">Tradiciones y Costumbres</h3>
+                          <p className="text-gray-700 leading-relaxed">
+                            {holidayDetails.traditions}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {holidayDetails.celebrations && (
+                    <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                      <div className="flex items-start gap-3">
+                        <Info className="w-5 h-5 text-orange-600 mt-0.5" />
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-gray-800 mb-2">Celebraciones Principales</h3>
+                          <p className="text-gray-700 leading-relaxed">
+                            {holidayDetails.celebrations}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {holidayDetails.facts && holidayDetails.facts.length > 0 && (
+                    <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-6">
+                      <h3 className="font-semibold text-gray-800 mb-3">Datos Curiosos</h3>
+                      <ul className="space-y-2">
+                        {holidayDetails.facts.map((fact, index) => (
+                          <li key={index} className="flex items-start gap-2">
+                            <span className="text-indigo-600 mt-1">•</span>
+                            <span className="text-gray-700">{fact}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </>
+              )}
+
               {/* Información adicional */}
               <div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">Información importante</h3>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">Información Práctica</h3>
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-start gap-2">
                     <span className="text-blue-600 mt-1">•</span>
