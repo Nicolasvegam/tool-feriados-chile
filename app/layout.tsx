@@ -3,7 +3,6 @@ import { Merriweather } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import './globals.css';
-import { WebSiteJsonLd, OrganizationJsonLd } from './components/JsonLd';
 import SkipNavigation from './components/SkipNavigation';
 import ServiceWorkerRegistration from './components/ServiceWorkerRegistration';
 import { Analytics } from '@vercel/analytics/react';
@@ -103,10 +102,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="es">
-            <head>
-                <WebSiteJsonLd />
-                <OrganizationJsonLd />
-            </head>
+            <head></head>
             <body className={merriweather.className}>
                 <SkipNavigation />
                 <ServiceWorkerRegistration />

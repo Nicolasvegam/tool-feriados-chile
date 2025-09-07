@@ -6,6 +6,7 @@ import YearSelector from '../components/YearSelector';
 import LawsSection from '../components/LawsSection/LawsSection';
 import CalendarExport from '../components/CalendarExport';
 import { getHolidaysByYear, getVacationOptimizationByYear } from '../utils/dataUtils';
+import { WebSiteJsonLd, OrganizationJsonLd } from '../components/JsonLd';
 
 const VALID_YEARS = ['2024', '2025', '2026', '2027'];
 
@@ -93,6 +94,8 @@ export default async function YearPage({ params }: { params: { year: string } })
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <WebSiteJsonLd url={`https://www.feriadosenchile.com/${year}`} />
+      <OrganizationJsonLd url={`https://www.feriadosenchile.com/${year}`} />
       
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="container mx-auto px-4 py-8">

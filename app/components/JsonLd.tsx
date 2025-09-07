@@ -18,14 +18,14 @@ export default function JsonLd({ type, data }: JsonLdProps) {
   );
 }
 
-export function WebSiteJsonLd() {
+export function WebSiteJsonLd({ url }: { url: string }) {
   return (
     <JsonLd
       type="WebSite"
       data={{
         name: 'Feriados en Chile',
         description: 'Calendario oficial de feriados en Chile. Consulta días festivos, feriados irrenunciables y planifica tus vacaciones.',
-        url: 'https://www.feriadosenchile.com',
+        url: url,
         inLanguage: 'es-CL',
         publisher: {
           '@type': 'Organization',
@@ -59,7 +59,7 @@ export function WebSiteJsonLd() {
   );
 }
 
-export function FAQJsonLd({ faqs }: { faqs?: Array<{ question: string; answer: string }> }) {
+export function FAQJsonLd({ faqs, url }: { faqs?: Array<{ question: string; answer: string }>; url: string }) {
   const defaultFaqs = [
     {
       question: '¿Cuántos feriados irrenunciables hay en Chile?',
@@ -89,6 +89,7 @@ export function FAQJsonLd({ faqs }: { faqs?: Array<{ question: string; answer: s
     <JsonLd
       type="FAQPage"
       data={{
+        url: url,
         mainEntity: faqData.map(faq => ({
           '@type': 'Question',
           name: faq.question,
@@ -118,7 +119,7 @@ export function BreadcrumbJsonLd({ items }: { items: Array<{ name: string; url: 
   );
 }
 
-export function OrganizationJsonLd() {
+export function OrganizationJsonLd({ url }: { url: string }) {
   return (
     <script
       type="application/ld+json"
@@ -127,7 +128,7 @@ export function OrganizationJsonLd() {
           '@context': 'https://schema.org',
           '@type': 'Organization',
           name: 'Feriados en Chile',
-          url: 'https://www.feriadosenchile.com',
+          url: url,
           logo: {
             '@type': 'ImageObject',
             url: 'https://www.feriadosenchile.com/images/logo-feriados.webp',

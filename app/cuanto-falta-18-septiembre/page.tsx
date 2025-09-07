@@ -3,9 +3,18 @@ import ChileanSayings from '@/app/components/ChileanSayings';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Cuánto falta para el 18 de Septiembre 2024 - Fiestas Patrias Chile',
-  description: 'Descubre cuánto falta para el 18 de Septiembre y las Fiestas Patrias de Chile 2024. Contador en tiempo real para las Fiestas Patrias. ¡Prepárate para celebrar el 18 de Septiembre con empanadas, chicha y cueca!',
-  keywords: '18 de septiembre, fiestas patrias, chile, contador, cuánto falta, dieciocho',
+  title: 'Cuánto Falta para el 18 de Septiembre - Fiestas Patrias Chile | Feriados Chile',
+  description: 'Descubre cuánto falta para el 18 de Septiembre y las Fiestas Patrias de Chile. Contador en tiempo real con tradiciones, comidas típicas y celebraciones chilenas.',
+  keywords: '18 de septiembre, fiestas patrias, chile, contador, cuánto falta, dieciocho, empanadas, cueca, tradiciones chilenas',
+  openGraph: {
+    title: 'Cuánto Falta para el 18 de Septiembre - Fiestas Patrias Chile',
+    description: 'Cuenta regresiva para las Fiestas Patrias con tradiciones y celebraciones chilenas.',
+    url: 'https://www.feriadosenchile.com/cuanto-falta-18-septiembre',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://www.feriadosenchile.com/cuanto-falta-18-septiembre',
+  },
 };
 
 export default function Contador18Septiembre() {

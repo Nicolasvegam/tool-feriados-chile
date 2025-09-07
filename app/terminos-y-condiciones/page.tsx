@@ -2,14 +2,17 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Términos y Condiciones | Feriados en Chile',
+  title: 'Términos y Condiciones | Feriados Chile',
   description: 'Términos y condiciones de uso del sitio web Feriados en Chile. Lee nuestras políticas antes de usar nuestros servicios.',
+  keywords: 'términos y condiciones, políticas uso, feriados chile, condiciones servicio, términos legales',
   openGraph: {
     title: 'Términos y Condiciones | Feriados en Chile',
     description: 'Términos y condiciones de uso del sitio web Feriados en Chile.',
+    url: 'https://www.feriadosenchile.com/terminos-y-condiciones',
+    type: 'website',
   },
   alternates: {
-    canonical: 'https://feriadosenchile.com/terminos-y-condiciones',
+    canonical: 'https://www.feriadosenchile.com/terminos-y-condiciones',
   },
   robots: {
     index: true,

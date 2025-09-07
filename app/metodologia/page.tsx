@@ -2,14 +2,17 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Metodología y Fuentes | Feriados en Chile',
+  title: 'Metodología y Fuentes | Feriados Chile',
   description: 'Conoce las fuentes oficiales y la metodología que utilizamos para mantener actualizada la información sobre feriados en Chile.',
+  keywords: 'metodología, fuentes oficiales, bcn, dirección trabajo, gobierno chile, verificación información, feriados chile',
   openGraph: {
     title: 'Metodología y Fuentes | Feriados en Chile',
     description: 'Fuentes oficiales y metodología para información sobre feriados en Chile.',
+    url: 'https://www.feriadosenchile.com/metodologia',
+    type: 'website',
   },
   alternates: {
-    canonical: 'https://feriadosenchile.com/metodologia',
+    canonical: 'https://www.feriadosenchile.com/metodologia',
   },
 }
 
