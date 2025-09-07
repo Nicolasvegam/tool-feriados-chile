@@ -18,7 +18,7 @@ export default function JsonLd({ type, data }: JsonLdProps) {
   );
 }
 
-export function WebSiteJsonLd({ url = 'https://www.feriadosenchile.com' }: { url?: string }) {
+export function WebSiteJsonLd({ url }: { url: string }) {
   return (
     <JsonLd
       type="WebSite"
@@ -59,7 +59,7 @@ export function WebSiteJsonLd({ url = 'https://www.feriadosenchile.com' }: { url
   );
 }
 
-export function FAQJsonLd({ faqs, url = 'https://www.feriadosenchile.com' }: { faqs?: Array<{ question: string; answer: string }>; url?: string }) {
+export function FAQJsonLd({ faqs, url }: { faqs?: Array<{ question: string; answer: string }>; url: string }) {
   const defaultFaqs = [
     {
       question: '¿Cuántos feriados irrenunciables hay en Chile?',
@@ -119,7 +119,7 @@ export function BreadcrumbJsonLd({ items }: { items: Array<{ name: string; url: 
   );
 }
 
-export function OrganizationJsonLd({ url = 'https://www.feriadosenchile.com' }: { url?: string }) {
+export function OrganizationJsonLd({ url }: { url: string }) {
   return (
     <script
       type="application/ld+json"
