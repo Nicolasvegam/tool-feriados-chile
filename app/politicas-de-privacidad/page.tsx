@@ -2,14 +2,17 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Políticas de Privacidad | Feriados en Chile',
+  title: 'Políticas de Privacidad | Feriados Chile',
   description: 'Conoce cómo protegemos tu privacidad y manejamos tus datos en Feriados en Chile. Tu privacidad es nuestra prioridad.',
+  keywords: 'políticas de privacidad, protección datos, privacidad, manejo información, cookies, feriados chile',
   openGraph: {
     title: 'Políticas de Privacidad | Feriados en Chile',
     description: 'Políticas de privacidad y manejo de datos en Feriados en Chile.',
+    url: 'https://www.feriadosenchile.com/politicas-de-privacidad',
+    type: 'website',
   },
   alternates: {
-    canonical: 'https://feriadosenchile.com/politicas-de-privacidad',
+    canonical: 'https://www.feriadosenchile.com/politicas-de-privacidad',
   },
   robots: {
     index: true,

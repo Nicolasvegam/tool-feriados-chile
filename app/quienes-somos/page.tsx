@@ -1,14 +1,17 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Quiénes Somos | Feriados en Chile',
+  title: 'Quiénes Somos | Feriados Chile',
   description: 'Conoce a Feriados en Chile, tu fuente confiable para información actualizada sobre días festivos, calculadora de vacaciones y herramientas para planificar tu tiempo libre.',
+  keywords: 'quienes somos, feriados chile, mision, vision, herramientas feriados, calculadora vacaciones',
   openGraph: {
     title: 'Quiénes Somos | Feriados en Chile',
     description: 'Conoce a Feriados en Chile, tu fuente confiable para información actualizada sobre días festivos.',
+    url: 'https://www.feriadosenchile.com/quienes-somos',
+    type: 'website',
   },
   alternates: {
-    canonical: 'https://feriadosenchile.com/quienes-somos',
+    canonical: 'https://www.feriadosenchile.com/quienes-somos',
   },
 }
 

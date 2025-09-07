@@ -1,14 +1,17 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Contacto | Feriados en Chile',
+  title: 'Contacto | Feriados Chile',
   description: 'Contáctanos para preguntas, sugerencias o comentarios sobre Feriados en Chile. Estamos aquí para ayudarte.',
+  keywords: 'contacto, feriados chile, preguntas, sugerencias, ayuda, soporte, correo electrónico',
   openGraph: {
     title: 'Contacto | Feriados en Chile',
     description: 'Contáctanos para preguntas o sugerencias sobre Feriados en Chile.',
+    url: 'https://www.feriadosenchile.com/contacto',
+    type: 'website',
   },
   alternates: {
-    canonical: 'https://feriadosenchile.com/contacto',
+    canonical: 'https://www.feriadosenchile.com/contacto',
   },
 }
 
