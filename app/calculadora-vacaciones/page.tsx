@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import VacationCalculator from '../components/VacationCalculator';
-import { BreadcrumbJsonLd } from '../components/JsonLd';
+import { BreadcrumbJsonLd, WebSiteJsonLd, OrganizationJsonLd } from '../components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Calculadora de Vacaciones - Optimiza tus Días Libres | Feriados Chile',
@@ -25,6 +25,8 @@ export default function CalculadoraVacacionesPage() {
 
   return (
     <>
+      <WebSiteJsonLd url="https://www.feriadosenchile.com/calculadora-vacaciones" />
+      <OrganizationJsonLd url="https://www.feriadosenchile.com/calculadora-vacaciones" />
       <BreadcrumbJsonLd items={breadcrumbItems} />
       
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
