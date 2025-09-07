@@ -1,9 +1,22 @@
-# Allow all crawlers
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
+
+# All other crawlers
 User-agent: *
 Allow: /
+Crawl-delay: 10
+
+# Specific paths to encourage crawling
+Allow: /2024/feriado/
+Allow: /2025/feriado/
+Allow: /2026/feriado/
+Allow: /2027/feriado/
 
 # Sitemap location
-Sitemap: https://www.feriadosenchile.com/sitemap.xml
-
-# Optimize crawling
-Crawl-delay: 10 
