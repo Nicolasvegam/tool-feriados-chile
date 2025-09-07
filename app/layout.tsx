@@ -3,7 +3,7 @@ import { Merriweather } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import './globals.css';
-import { WebSiteJsonLd, FAQJsonLd, OrganizationJsonLd } from './components/JsonLd';
+import { WebSiteJsonLd, OrganizationJsonLd } from './components/JsonLd';
 import SkipNavigation from './components/SkipNavigation';
 import ServiceWorkerRegistration from './components/ServiceWorkerRegistration';
 import { Analytics } from '@vercel/analytics/react';
@@ -106,7 +106,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <head>
                 <WebSiteJsonLd />
                 <OrganizationJsonLd />
-                <FAQJsonLd />
             </head>
             <body className={merriweather.className}>
                 <SkipNavigation />

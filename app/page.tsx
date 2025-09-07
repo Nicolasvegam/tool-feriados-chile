@@ -5,6 +5,7 @@ import YearSelector from './components/YearSelector';
 import LawsSection from './components/LawsSection/LawsSection';
 import CalendarExport from './components/CalendarExport';
 import { getHolidaysByYear, getVacationOptimizationByYear } from './utils/dataUtils';
+import { FAQJsonLd } from './components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Feriados en Chile 2025 - Calendario de Días Festivos',
@@ -56,6 +57,7 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <FAQJsonLd />
       
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="container mx-auto px-4 py-8">
