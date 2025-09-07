@@ -56,7 +56,7 @@ export default function FeriadosIrrenunciablesPage() {
 
   return (
     <>
-      <FAQJsonLd faqs={faqs} />
+      <FAQJsonLd faqs={faqs} url="https://www.feriadosenchile.com/feriados-irrenunciables" />
       <BreadcrumbJsonLd items={breadcrumbItems} />
       
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
