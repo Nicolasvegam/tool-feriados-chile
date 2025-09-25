@@ -20,3 +20,4 @@ Allow: /2026/feriado/
 Allow: /2027/feriado/
 
 # Sitemap location
+Sitemap: https://www.feriadosenchile.com/sitemap.xml
